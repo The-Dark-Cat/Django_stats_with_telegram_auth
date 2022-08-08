@@ -1,1 +1,2 @@
 django-telegram-login
+Django~=4.1
