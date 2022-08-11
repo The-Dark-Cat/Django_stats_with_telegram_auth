@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/stats.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+{#    include the head template  #}
+
+</head>
+<body class="body-p">
+    {% include 'head.html' %}
+    <div class="base-div">
+        <form action="{% url 'keitaro_stats' %}" method="post">
+        {% csrf_token %}
+        {{ date_form.as_div }}
+        <button class="submit-button">Submit</button>
+    </form>
+    </div>
+
+    <div class="base-div">
+{% for row in report.rows %}
+    <div>
+        <p> User: {{ row.sub_id_6 }}</p>
+        <p> Clicks: {{ row.clicks }} </p>
+        <p> Conversions: {{ row.conversions }} </p>
+    </div>
+
+{% endfor %}
+    {% if report.error %}
+    <p> Error: {{ report.error }}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

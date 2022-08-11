@@ -1,0 +1,28 @@
+
+
+.head_line {
+    color: darkblue;
+    width: 100vw;
+    background-color: coral;
+    height: 50px;
+}
+
+.user{
+    color: #ddffdd;
+    font-size: 30px;
+}
+
+.link{
+    color: white;
+    font-size: 30px;
+}
+
+.link b{
+    background-color: coral;
+    padding: 10px 2vw 10px 2vw;
+}
+
+.link:hover{
+    color: coral;
+    text-decoration: none;
+}

@@ -1,0 +1,57 @@
+.body-p{
+    background-color: #cccccc;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.base-div{
+    width: 350px;
+    background-color: white;
+    color: #00363a;
+    font-size: 20px;
+    margin: 20px 0px 0px 100px;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.edited-div{
+    width: 250px;
+    /*height: 20px;*/
+    padding: 5px;
+    margin: 20px 0px 0px 30px;
+}
+
+.not-authorized{
+    color: red;
+    text-align: center;
+}
+
+
+
+.date-form{
+    height: 25px;
+    background-color: #ddffdd;
+    color: #00363a;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 0px 0px 20px 10px;
+    border: 1px solid #00363a;
+}
+
+.static-info-div{
+    padding: 10px 100px 0 10px;
+    margin-left: 10vw;
+    margin-top: 60px;
+    font-size: 22px;
+}
+
+.submit-button{
+    background-color: #ddffdd;
+    color: #00363a;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px solid #00363a;
+    margin-left: 10vw;
+    margin-top: 10px;
+}
