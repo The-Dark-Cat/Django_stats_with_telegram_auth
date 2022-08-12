@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/stats.css' %}">
+    <title>Title</title>
+    {% include 'head.html' %}
+</head>
+<body class="body-p">
+    {% if user.is_authorized %}
+    <div class="base-div">
+        <a>Welcome {{ user.first_name }}</a>
+    </div>
+    {% else %}
+    <div class="base-div edited-div">
+        <p class="not-authorized">{{ exception }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
