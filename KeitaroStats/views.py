@@ -22,7 +22,7 @@ class KeitaroStatsView(View):
         context['date_form'] = date_form
         date_from = date_to = datetime.date.today()
 
-        report = get_report(date_from, date_to, request.user.username)
+        report = get_report(date_from, date_to, request.user.keitaro_username)
         context['report'] = report
 
         return render(request, 'KeitaroStats/stats.html', context)
@@ -37,7 +37,7 @@ class KeitaroStatsView(View):
             date_from = date_form.cleaned_data['date_from']
             date_to = date_form.cleaned_data['date_to']
 
-            report = get_report(date_from, date_to)
+            report = get_report(date_from, date_to, request.user.keitaro_username)
             context['report'] = report
 
         return render(request, 'KeitaroStats/stats.html', context)
