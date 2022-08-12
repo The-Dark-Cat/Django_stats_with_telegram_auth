@@ -22,9 +22,13 @@
     <div class="base-div">
 {% for row in report.rows %}
     <div>
+        {% if row.sub_id_6 %}
         <p> User: {{ row.sub_id_6 }}</p>
         <p> Clicks: {{ row.clicks }} </p>
         <p> Conversions: {{ row.conversions }} </p>
+        {% else %}
+        <p> No data for this user </p>
+        {% endif %}
     </div>
 
 {% endfor %}
