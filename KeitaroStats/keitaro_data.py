@@ -5,7 +5,7 @@ import requests
 token = os.environ.get('API_TOKEN')
 
 
-def get_report(date_from, date_to, name='bogdan'):
+def get_report(date_from, date_to, name):
     data = requests.post(
         'http://136.244.93.168/admin_api/v1/report/build',
         headers={'Api-Key': token},
