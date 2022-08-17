@@ -29,10 +29,10 @@ def register_keyboard():
 
 
 @sync_to_async(thread_sensitive=True)
-def login_user_from_model(user):
+def get_url_for_user(user):
     token = user.get_unique_token()
     TempToken.objects.create(user=user, token=token)
-    return os.environ.get('SITE_URL')[:-1] + reverse('custom_user_login', kwargs={'token': token}, current_app='UserAuth')
+    return os.environ.get('SITE_URL') + reverse('custom_user_login', kwargs={'token': token}, current_app='UserAuth')
 
 
 @sync_to_async(thread_sensitive=True)
@@ -66,7 +66,7 @@ async def login_user(message: types.Message):
     last_name = message.chat.last_name
     try:
         user = await register_user(telegram_id, first_name, last_name, username)
-        url = await login_user_from_model(user)
+        url = await get_url_for_user(user)
         keyboard = types.InlineKeyboardMarkup()
         button_login = types.InlineKeyboardButton(text='Login', url=url)
         keyboard.add(button_login)
